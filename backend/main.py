@@ -6,11 +6,11 @@ import uuid
 
 app = FastAPI(title="TaskFlow API")
 
-# ── CORS – allow the React dev server ──────────────────────────────────────
+# ── CORS – allow any origin (wildcard cannot be used with allow_credentials=True) ─
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],   # Allow all origins (localhost dev + any deployed frontend)
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,   # Must be False when allow_origins=["*"]
     allow_methods=["*"],
     allow_headers=["*"],
 )

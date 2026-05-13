@@ -1,5 +1,5 @@
-const BASE_URL = 'https://fastapi-get-started-gokul-n2w8.vercel.app/'
-
+const BASE_URL = 'https://fastapi-get-started-gokul-n2w8.vercel.app'
+ 
 async function request(path, options = {}) {
   const res = await fetch(`${BASE_URL}${path}`, {
     headers: { 'Content-Type': 'application/json', ...options.headers },
